@@ -18,4 +18,4 @@ The monitor will also retain distinct retrieved advisories locally for replay, c
 
 The selected dashboard scope includes tracks, intensity, advisory metadata, and official uncertainty cones and wind-radius overlays where available. Unavailable source fields or overlays will be labeled rather than estimated.
 
-Execution location: local filesystem and local Git repository. Source is published at [Geauga/Geauga](https://github.com/Geauga/Geauga). No Google Drive API or Colab execution has been performed. The workspace resides under the user's OneDrive directory; OneDrive synchronization is outside this task's verification.
+Execution location: local filesystem and local Git repository. Source is published at [Geauga/cyclone-tracker](https://github.com/Geauga/cyclone-tracker). No Google Drive API or Colab execution has been performed. The workspace resides under the user's OneDrive directory; OneDrive synchronization is outside this task's verification.
