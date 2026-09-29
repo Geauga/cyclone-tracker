@@ -126,3 +126,11 @@ GitHub Timeline: 已 push — existing history remains published under the resto
 测试或验证结果: Backup bundle verified. Candidate validation requires unchanged trees/messages/dates for each original commit and corrected Geauga attribution. Application code is unchanged; no runtime tests required.
 执行位置: Local Git repository; public GitHub account identity lookup. Global Git identity is unchanged.
 GitHub Timeline: 已 push — the original four commits remain on origin/master; attribution correction and this log are local only until explicit approval to replace published history.
+
+时间: 2026-09-29 16:05:18 -04:00 (America/New_York)
+用户 Prompt 摘要: approve — explicitly approved rewriting published history to change contributor attribution to Geauga.
+具体动作: Published the prepared corrected history with an exact force-with-lease against prior remote master 4338f3f79ecc886f884af7e4183ead8a98642a5c. Advanced local master to identical corrected content at 28935124be0d4f2fde720e242a36c64a8c3a6b98. Four original commits now have Geauga author/committer metadata; messages, dates and file trees are preserved. Existing backup bundle remains available. Future commits use repository-local Geauga identity.
+修改文件: 历史工作记录.txt; cyclone-monitor/历史工作记录.txt. Git metadata: approved rewritten master history and matching local branch.
+测试或验证结果: Force-with-lease push succeeded and local/remote hashes matched. GitHub API explicitly associated all five published commits, including preparation log, with login Geauga as both author and committer. No application code changed. Completion log is committed as Geauga and pushed normally.
+执行位置: Local Git repository and GitHub remote Geauga/cyclone-tracker. Original history retained in cyclone-monitor/.research/before-geauga-attribution.bundle, excluded from Git.
+GitHub Timeline: 已 push — approved attribution correction verified on GitHub; completion record follows in a normal fast-forward push.
