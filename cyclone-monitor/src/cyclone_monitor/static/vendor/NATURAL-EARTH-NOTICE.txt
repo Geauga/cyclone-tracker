@@ -1,0 +1,6 @@
+Natural Earth 110m Admin 0 Countries, version 5.1.1.
+Public-domain cartographic data.
+Source: https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/
+Download: https://naciscdn.org/naturalearth/110m/cultural/ne_110m_admin_0_countries.zip
+Bundled GeoJSON retains country names and geometry, converted using examples/build_basemap.py.
+Downloaded 2026-09-28; used as a low-resolution offline basemap.

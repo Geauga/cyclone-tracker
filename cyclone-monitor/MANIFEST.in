@@ -1,0 +1,7 @@
+# MANIFEST.in
+# User request: distribute the local package with its documentation and examples.
+include README.md REQUIREMENTS.md SOURCES.md VALIDATION.md start.ps1 AGENT_PERSONAL_CUSTOMIZATION.md
+recursive-include examples *.py
+# Purpose: include reproducible usage material in the source distribution.
+# Upstream: project source and documentation, which define and explain the monitor.
+# Environment: setuptools build. Generated: 2026-09-29 America/New_York.

@@ -1,0 +1,32 @@
+# pyproject.toml
+# User request: installable local cyclone monitor with GIS and scientific exports.
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cyclone-monitor-local"
+version = "0.1.0"
+description = "Local official tropical cyclone advisory monitor and archive"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["Flask>=3.1,<4", "waitress>=3,<4", "netCDF4>=1.7,<2", "pyshp>=2.3,<3", "shapely>=2,<3", "certifi"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10", "build>=1,<2"]
+
+[project.scripts]
+cyclone-monitor = "cyclone_monitor.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cyclone_monitor = ["static/*", "static/vendor/*", "static/vendor/images/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+# Purpose: package metadata. Upstream: REQUIREMENTS.md (user-approved scope).
+# Environment: Python 3.11+; Windows/Linux/macOS. Generated: 2026-09-28 America/New_York.
+# Change record: new implementation, lines 1-31; finalized 2026-09-29 America/New_York.

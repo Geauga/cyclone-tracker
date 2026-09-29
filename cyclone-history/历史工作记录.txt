@@ -1,0 +1,8 @@
+
+时间: 2026-09-28 13:48:21 -04:00 (America/New_York)
+用户 Prompt 摘要: make a package that tracks tropical cyclones; split into different projects; continue.
+具体动作: Created separate specification directories for active-storm monitoring, historical analysis, and model-grid cyclone detection. Recorded scope, open decisions, and proposed acceptance criteria. Copied the supplied agent operating protocol into each project. No implementation language or provider selected; no runnable package created.
+修改文件: REQUIREMENTS.md; AGENT_PERSONAL_CUSTOMIZATION.md; 历史工作记录.txt
+测试或验证结果: Verified all three REQUIREMENTS.md files exist and all three operating-protocol copies have identical SHA-256 hashes to the workspace original. Documentation-only update; runtime tests are not applicable.
+执行位置: Local filesystem and local Git repository, under the OneDrive workspace path. No Colab or GitHub execution.
+GitHub Timeline: 未 commit; no push performed. Existing repository has no commits; changes remain local because commit/push was not requested. Project directories share the parent repository.

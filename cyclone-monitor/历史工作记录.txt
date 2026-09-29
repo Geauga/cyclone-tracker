@@ -1,0 +1,96 @@
+
+时间: 2026-09-28 13:48:21 -04:00 (America/New_York)
+用户 Prompt 摘要: make a package that tracks tropical cyclones; split into different projects; continue.
+具体动作: Created separate specification directories for active-storm monitoring, historical analysis, and model-grid cyclone detection. Recorded scope, open decisions, and proposed acceptance criteria. Copied the supplied agent operating protocol into each project. No implementation language or provider selected; no runnable package created.
+修改文件: REQUIREMENTS.md; AGENT_PERSONAL_CUSTOMIZATION.md; 历史工作记录.txt
+测试或验证结果: Verified all three REQUIREMENTS.md files exist and all three operating-protocol copies have identical SHA-256 hashes to the workspace original. Documentation-only update; runtime tests are not applicable.
+执行位置: Local filesystem and local Git repository, under the OneDrive workspace path. No Colab or GitHub execution.
+GitHub Timeline: 未 commit; no push performed. Existing repository has no commits; changes remain local because commit/push was not requested. Project directories share the parent repository.
+
+时间: 2026-09-28 13:56:49 -04:00 (America/New_York)
+用户 Prompt 摘要: monitor; global from RMSCs.
+具体动作: Selected Cyclone Monitor as the first project; recorded global scope and official RSMC source authorities. Checked WMO RSMC and TCWC directories. Documented TCWC inclusion as a working interpretation for global coverage, with provider endpoints and delivery interface still open. Updated workspace summaries for consistency.
+修改文件: README.md; REQUIREMENTS.md; cyclone-monitor/REQUIREMENTS.md; 历史工作记录.txt; cyclone-monitor/历史工作记录.txt.
+测试或验证结果: Read WMO official centre directories; verified requirements contain the six RSMCs, four TCWCs, source links, and explicit interpretation. No runtime implementation changed or tested. No live data feeds validated.
+执行位置: Local filesystem and local Git repository; public WMO website research. No Colab or GitHub execution.
+GitHub Timeline: 未 commit; no push performed because commit/push was not requested.
+
+时间: 2026-09-28 13:58:05 -04:00 (America/New_York)
+用户 Prompt 摘要: Selected option 3, Python package plus web dashboard.
+具体动作: Recorded an independently usable Python package and an interactive storm/forecast map dashboard using package retrieval and processing logic. Left dashboard framework, deployment, and access model open. Updated workspace summaries.
+修改文件: README.md; REQUIREMENTS.md; cyclone-monitor/REQUIREMENTS.md; 历史工作记录.txt; cyclone-monitor/历史工作记录.txt.
+测试或验证结果: Reviewed requirements and workspace summaries for consistency; documentation-only changes. No runnable implementation or runtime tests yet.
+执行位置: Local filesystem and local Git repository.
+GitHub Timeline: 未 commit; no push performed because commit/push was not requested.
+
+时间: 2026-09-28 13:59:20 -04:00 (America/New_York)
+用户 Prompt 摘要: local.
+具体动作: Recorded local dashboard deployment in the user's browser, with loopback binding by default and internet retrieval of official data. Updated workspace summaries. Refresh behavior and any background collection remain undecided; no scheduler configured.
+修改文件: README.md; REQUIREMENTS.md; cyclone-monitor/REQUIREMENTS.md; 历史工作记录.txt; cyclone-monitor/历史工作记录.txt.
+测试或验证结果: Verified local deployment wording in all three specification documents using text inspection. Documentation only; no runtime tests applicable.
+执行位置: Local filesystem and local Git repository.
+GitHub Timeline: 未 commit; no push performed because commit/push was not requested.
+
+时间: 2026-09-28 14:00:43 -04:00 (America/New_York)
+用户 Prompt 摘要: Selected option 2, automatic updates while the dashboard is open plus a Refresh button.
+具体动作: Recorded automatic polling during active dashboard sessions and manual refresh. Excluded background collection after closing all dashboard sessions. Added proposed acceptance checks for polling lifecycle, overlapping requests, multiple tabs, and failed updates. Polling interval remains open; no scheduler or automation created.
+修改文件: README.md; REQUIREMENTS.md; cyclone-monitor/REQUIREMENTS.md; 历史工作记录.txt; cyclone-monitor/历史工作记录.txt.
+测试或验证结果: Inspected refresh requirements and matching workspace summaries. Documentation-only update; no runtime implementation or tests yet.
+执行位置: Local filesystem and local Git repository.
+GitHub Timeline: 未 commit; no push performed because commit/push was not requested.
+
+时间: 2026-09-28 14:08:21 -04:00 (America/New_York)
+用户 Prompt 摘要: Selected option 1, check for new advisories every five minutes.
+具体动作: Set the specified default polling interval to five minutes, configurable, during active dashboard sessions. Retained manual refresh and no polling after closing all sessions. Documented honoring provider retry delays and rate limits. Updated workspace summaries and proposed acceptance criteria.
+修改文件: README.md; REQUIREMENTS.md; cyclone-monitor/REQUIREMENTS.md; 历史工作记录.txt; cyclone-monitor/历史工作记录.txt.
+测试或验证结果: Verified five-minute/configurable wording across specification documents using text inspection. No runtime implementation or tests yet.
+执行位置: Local filesystem and local Git repository.
+GitHub Timeline: 未 commit; no push performed because commit/push was not requested.
+
+时间: 2026-09-28 14:09:48 -04:00 (America/New_York)
+用户 Prompt 摘要: Selected option 2, official WMO aggregation is acceptable with original issuing centre, advisory time, and provenance preserved.
+具体动作: Recorded acceptance of both direct agency feeds and official WMO aggregation. Checked WMO SWIC source policy; distinguished distribution endpoint from advisory issuer and noted that aggregated NMHS products require correct labeling. Added the open local-retention decision. No feed implementation or scheduler created.
+修改文件: README.md; REQUIREMENTS.md; cyclone-monitor/REQUIREMENTS.md; 历史工作记录.txt; cyclone-monitor/历史工作记录.txt.
+测试或验证结果: Read https://severeweather.wmo.int/tc.html and inspected source-policy consistency across documentation. Machine-readable endpoint availability, completeness, access conditions, and latency remain unverified. No runtime tests applicable.
+执行位置: Local filesystem and local Git repository; public WMO website research.
+GitHub Timeline: 未 commit; no push performed because commit/push was not requested.
+
+时间: 2026-09-28 14:11:26 -04:00 (America/New_York)
+用户 Prompt 摘要: Selected option 2, save each distinct advisory retrieved while running for replay, comparison, and export.
+具体动作: Recorded persistent local advisory archiving with deduplication, preservation of corrections, original source content, parsed data, and provenance. Distinguished monitor advisory replay from the separate historical research project. Specified no automatic archive deletion by default and explicit gaps during closed-dashboard periods. Updated summaries and proposed archive acceptance checks.
+修改文件: README.md; REQUIREMENTS.md; cyclone-monitor/REQUIREMENTS.md; 历史工作记录.txt; cyclone-monitor/历史工作记录.txt.
+测试或验证结果: Inspected archive requirements and consistent workspace summaries. Documentation-only changes; storage and replay remain unimplemented and runtime tests are not yet applicable.
+执行位置: Local filesystem and local Git repository.
+GitHub Timeline: 未 commit; no push performed because commit/push was not requested.
+
+时间: 2026-09-28 14:13:37 -04:00 (America/New_York)
+用户 Prompt 摘要: Selected option 2, core dashboard information plus official uncertainty cones and wind-radius overlays wherever available.
+具体动作: Recorded the expanded first-dashboard scope, source-specific overlay metadata and definitions, separate missing/zero/error states, and advisory-consistent archived replay. Added proposed overlay validation criteria and updated workspace summaries. No global overlay availability or feed integration is claimed.
+修改文件: README.md; REQUIREMENTS.md; cyclone-monitor/REQUIREMENTS.md; 历史工作记录.txt; cyclone-monitor/历史工作记录.txt.
+测试或验证结果: Inspected overlay requirements and matching workspace summaries. Documentation-only update; source geometries and runtime rendering remain unimplemented and untested.
+执行位置: Local filesystem and local Git repository.
+GitHub Timeline: 未 commit; no push performed because commit/push was not requested.
+
+时间: 2026-09-29 15:41:12 -04:00 (America/New_York)
+用户 Prompt 摘要: Selected CSV, GeoJSON, and NetCDF exports; continue implementation.
+具体动作: Implemented cyclone-monitor-local v0.1.0 with WMO RSMC/TCWC filtering, NOAA GIS overlays, SQLite snapshot archive, original-source ZIPs, three exports, Flask/Waitress loopback server, session-scoped polling, and Leaflet dashboard with offline Natural Earth map. Added tests, live-check and archive-use examples, launcher, source inventory, and installation documentation. Resumed interrupted validation and restarted the local server with latest code.
+修改文件: cyclone-monitor/pyproject.toml; .gitignore; start.ps1; src/cyclone_monitor modules and static assets; tests/test_monitor.py; examples/; README.md; SOURCES.md; REQUIREMENTS.md; workspace README.md and REQUIREMENTS.md; both work logs.
+测试或验证结果: 19 automated tests passed on 2026-09-28. Live WMO retrieval and all export formats verified. Corrected NOAA spherical-CRS handling and explicit zero-radius products; corresponding tests pass. Browser showed official Hanna cone/wind overlays. Final packaging and remaining browser checks in progress. Full provider diagnostics: cyclone-monitor/data/live-check.log and data/monitor.log.
+执行位置: Local Windows Python 3.12 virtual environment and Git working tree; public WMO/NOAA source retrieval. No Colab or Google Drive API execution. Old command session had ended; restarted server on 127.0.0.1:8765. No global Python or OS network configuration changed.
+GitHub Timeline: 未 commit; no push performed. Data, research downloads, virtual environment, and build output excluded by project .gitignore.
+
+时间: 2026-09-29 15:53:12 -04:00 (America/New_York)
+用户 Prompt 摘要: Continue the local global cyclone monitor package.
+具体动作: Completed browser replay/comparison and NetCDF download verification; corrected comparison wording to selected advisory; added distribution manifest, coverage/source documentation, validation record, and standalone archive example; built wheel/source distribution and installed wheel into a project-only verification folder; retained local dashboard tab and reset temporary viewport override.
+修改文件: cyclone-monitor/README.md; REQUIREMENTS.md; SOURCES.md; VALIDATION.md; MANIFEST.in; pyproject.toml; authored source/example/test/launcher metadata; src/cyclone_monitor/static/app.js; both work logs. Ignored artifacts: dist/, exports/example/, data/dashboard-preview.png, .research/wheel-check/.
+测试或验证结果: 19 pytest tests passed (0.68 seconds). Browser archive replay retained historical times/intensity/overlays; comparison displayed -5 kt and updated selected-advisory wording; no captured browser errors/warnings. Downloaded NetCDF opened with 11 records and 5 overlays. Standalone example generated CSV, GeoJSON and NetCDF. Built wheel imported from isolated target, all seven checked app/API/static routes returned HTTP 200; source distribution includes documentation/examples/launcher. Jakarta and Port Moresby direct feeds and non-NOAA polygon integrations remain absent, documented explicitly.
+执行位置: Local Windows Python 3.12 virtual environment and Git working tree. Server remains on 127.0.0.1:8765 (command session 81285). Initial sandbox wheel read was denied by filesystem permissions; approved local install verification succeeded. No Colab, Google Drive API, hosted deployment or system configuration changes.
+GitHub Timeline: 未 commit; no push performed because neither commit nor push was requested. Runtime data, caches and builds remain ignored.
+
+时间: 2026-09-29 15:54:42 -04:00 (America/New_York)
+用户 Prompt 摘要: push to github
+具体动作: Inspected repository, branch, Git author identity, publication file list and existing validation. Preparing an initial commit of the three-project workspace, implemented monitor, documentation and work logs. Requested the missing GitHub destination; no remote is configured.
+修改文件: REQUIREMENTS.md; 历史工作记录.txt; cyclone-monitor/历史工作记录.txt; all initial project source/documentation files to be staged.
+测试或验证结果: Latest implementation passed 19 tests and installed-wheel/browser verification. Git ignores virtual environments, archives, research downloads, exports and build artifacts. No implementation changes in this publication step.
+执行位置: Local Git repository on branch master. Git identity is configured. GitHub CLI was not found on PATH or its standard installation paths.
+GitHub Timeline: 未 commit; push destination pending user input, no remote configured and no push attempted.

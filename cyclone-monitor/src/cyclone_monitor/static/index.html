@@ -1,0 +1,32 @@
+<!-- index.html -->
+<!-- User request: local global-cyclone map, archive replay, official overlays, scientific exports. -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyclone Monitor</title><link rel="stylesheet" href="/static/vendor/leaflet.css"><link rel="stylesheet" href="/static/style.css">
+<script defer src="/static/vendor/leaflet.js"></script><script defer src="/static/app.js"></script></head>
+<body>
+<header><div class="brand"><span class="mark">◎</span><div><h1>Cyclone Monitor</h1><p>GLOBAL · OFFICIAL ADVISORIES</p></div></div>
+<div class="topactions"><span id="clock"></span><span class="local">LOCAL</span><button id="refresh">↻ Refresh</button></div></header>
+<div class="statusbar"><span id="status" role="status" aria-live="polite">Opening local archive…</span><div><label for="interval">Check every</label> <select id="interval"><option value="60">1 min</option><option value="300" selected>5 min</option><option value="900">15 min</option><option value="1800">30 min</option></select></div></div>
+<main>
+<aside><div class="aside-head"><div class="eyebrow">STORM DIRECTORY</div><h2>Across the basins <span id="count">0</span></h2><input id="search" type="search" placeholder="Search name, ID, or centre" aria-label="Search storms"><label class="check"><input type="checkbox" id="archived"> Include archived storms</label></div>
+<div id="storms" aria-live="polite" class="storms"></div>
+<details class="coverage"><summary>Sources & coverage</summary><div id="coverage"></div><a href="https://severeweather.wmo.int/tc.html" target="_blank" rel="noopener">WMO source information ↗</a></details></aside>
+<section class="workspace">
+<div class="map-wrap"><div id="map" aria-label="Global cyclone map"></div><div class="map-title"><span class="eyebrow">OFFICIAL TRACKS</span><strong id="map-label">Global overview</strong></div><button id="global" class="global">World view</button>
+<div class="legend"><label><input type="checkbox" id="tracks" checked> <i class="line"></i>Observed / forecast</label><label><input type="checkbox" id="cones" checked><i class="cone"></i>Uncertainty cone</label><label><input type="checkbox" id="winds" checked><i class="wind"></i>Wind extent</label><label>Wind time <select id="wind-time"><option value="">All published times</option></select></label></div></div>
+<section class="details">
+<div id="empty"><span class="eyebrow">SELECT A STORM</span><h2>From the latest advisory to the full track.</h2><p>Choose a storm to inspect its official forecast, available overlays, and locally archived advisories.</p></div>
+<div id="detail" hidden>
+<div class="detail-heading"><div><span class="eyebrow" id="mode">LATEST RETRIEVED</span><h2 id="storm-title"></h2><p id="issuer"></p></div><div class="exports"><span>Export</span><a id="csv">CSV</a><a id="geojson">GeoJSON</a><a id="nc">NetCDF</a><a id="raw">Originals ZIP</a></div></div>
+<div class="metrics"><div><span>MAX WIND</span><strong id="wind-value">—</strong><small id="averaging"></small></div><div><span>CENTRAL PRESSURE</span><strong id="pressure-value">—</strong></div><div><span>ANALYSIS · UTC</span><strong class="time" id="analysis"></strong></div><div><span>ISSUED · UTC</span><strong class="time" id="issued"></strong></div></div>
+<div class="replay"><label>Advisory <select id="versions"></select></label><button id="play">▶ Replay</button><label>Compare with <select id="compare"><option value="">None</option></select></label><span id="comparison"></span></div>
+<div id="overlay-status" class="note"></div><p id="wind-text" class="note"></p><p id="provenance" class="note"></p>
+<details><summary>Track and intensity records</summary><div id="records"></div></details>
+</div>
+</section><div id="errors" role="alert"></div>
+</section></main>
+<footer>Official sources · UTC timestamps · Original wind conventions retained <span>Updates run only while a dashboard session is open.</span></footer>
+</body></html>
+<!-- Purpose: browser UI. Upstream: server.py API supplies official and archived data. -->
+<!-- Environment: modern local browser. Generated: 2026-09-28 America/New_York. -->
