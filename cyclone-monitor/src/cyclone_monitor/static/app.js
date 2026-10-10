@@ -125,7 +125,7 @@ function renderDetail(fit=false) {
   el("overlay-status").textContent="Cone: "+p.overlay_status.cone+" · Wind polygons: "+p.overlay_status.wind;
   el("wind-text").textContent=last.wind_radii_text?"Published wind radii: "+last.wind_radii_text:"Wind-radius text: unavailable in this advisory.";
   el("provenance").textContent="First retrieved "+fmt(p.retrieved_at)+" UTC · Last seen "+fmt(p.last_seen)+" UTC · "+p.source_url;
-  for(const type of ["csv","geojson","nc","raw"]) el(type).href="/api/export/"+p.version+"/"+type;
+  for(const type of ["csv","geojson","nc","raw","html","svg"]) el(type).href="/api/export/"+p.version+"/"+type;
   const times=[...new Set(p.overlays.filter(f=>f.properties.kind==="wind").map(f=>f.properties.valid_time).filter(Boolean))].sort();
   const prior=el("wind-time").value;
   el("wind-time").innerHTML='<option value="">All published times</option>'+times.map(t=>'<option value="'+esc(t)+'">'+esc(fmt(t))+' UTC</option>').join("");
@@ -212,3 +212,4 @@ heartbeat().then(updateState).catch(showError);
 // Purpose: dashboard interaction; upstream: local server API returns official/archived advisories.
 // Environment: modern browser with Leaflet. Generated: 2026-09-28 America/New_York.
 // Change record: new UI lines 1-213; line 201: label selected advisory accurately during replay. Finalized 2026-09-29 America/New_York.
+// Updated: 2026-10-09 America/New_York; line 128 adds selected-version HTML and SVG download URLs.

@@ -175,7 +175,7 @@ def test_api_export_and_local_boundary(tmp_path, product, source):
     client = app.test_client()
     assert client.get("/").status_code == 200
     assert client.get("/api/state").json["storms"][0]["name"] == "TEST ONLY"
-    for kind in ("csv", "geojson", "nc", "raw"):
+    for kind in ("csv", "geojson", "nc", "raw", "html", "svg"):
         response = client.get("/api/export/" + version + "/" + kind)
         assert response.status_code == 200 and len(response.data) > 0
     assert client.get("/api/advisory/unknown").status_code == 404
@@ -229,3 +229,4 @@ def test_explicit_timezone_is_converted():
 # Purpose: behavior tests with explicitly synthetic fixtures. Upstream: package requirements and modules.
 # Environment: Python 3.11+, pytest. Generated: 2026-09-28 America/New_York.
 # Change record: new implementation, lines 1-230; finalized 2026-09-29 America/New_York.
+# Updated: 2026-10-09 America/New_York; line 178 verifies HTML/SVG map downloads alongside scientific exports.

@@ -16,7 +16,7 @@ Each project owns its dependencies, interfaces, tests, and documentation. No sha
 
 ## Current stage
 
-Cyclone Monitor version 0.1.0 is implemented as the cyclone-monitor-local Python distribution with a Flask/Waitress/Leaflet dashboard running locally. It uses WMO RSMC/TCWC track data, matching NOAA cone/wind GIS products, five-minute session-scoped refresh, SQLite advisory replay, and CSV/GeoJSON/NetCDF exports. Source gaps and scientific interpretation limits are documented in cyclone-monitor/SOURCES.md. The other two projects remain at the requirements stage.
+Cyclone Monitor version 0.2.0 is implemented as the cyclone-monitor-local Python distribution with a Flask/Waitress/Leaflet dashboard running locally. It uses WMO RSMC/TCWC track data, matching NOAA cone/wind GIS products, five-minute session-scoped refresh, SQLite advisory replay, and CSV/GeoJSON/NetCDF exports. It also generates standalone offline HTML and SVG track maps from archived advisories or exported GeoJSON, with Python API, CLI and dashboard downloads. Source gaps and scientific interpretation limits are documented in cyclone-monitor/SOURCES.md. The other two projects remain at the requirements stage.
 
 Implementation and verification run locally. The user requested a GitHub push on 2026-09-29; publication status is recorded in the append-only work log.
 

@@ -27,3 +27,17 @@ Bundled Leaflet and Natural Earth resources allow the basemap to load without th
 The verified WMO issuer mapping includes the six RSMCs plus Melbourne and Wellington TCWCs. Jakarta and Port Moresby direct integrations remain absent. Only NHC/CPHC polygon feeds are integrated. Other radii text remains source text. No observations of inactive centres during this check establish their future feed reliability. The 12-hour age highlight is a UI threshold, not an agency-specific freshness rule.
 
 The automated checks do not establish exhaustive provider coverage, long-duration reliability, or complete recovery from every OS interruption. Archives contain only retrieved products. This release is a local working monitor with these limits recorded explicitly.
+
+## Track map generator — version 0.2.0, 2026-10-09/10
+
+Added an independent CLI/Python generator and selected-advisory dashboard downloads for standalone HTML and SVG maps. No new data providers or global coverage claims were introduced. The example maps use the saved Hanna advisory analyzed at 2026-09-29 15:00 UTC, not current data.
+
+The 27-case suite passed in 1.12 seconds. Eight new cases cover offline HTML asset embedding, hostile source-text escaping, original GeoJSON/provenance recovery, missing versus zero wind extent, preserved date-line geometry, four invalid-coordinate inputs without overwriting an existing output, GeoJSON CLI generation/missing archive handling, and exact archived-revision selection. The existing API integration case also checks HTML/SVG downloads. After the final SVG wrapping adjustment, all eight map cases passed again in 0.47 seconds. Node syntax checks passed for the generator and dashboard JavaScript.
+
+CLI and the complete Python example generated maps from the existing archive. The SVG was rendered through a project-only PyMuPDF installation and visually inspected; timestamps and long source URLs fit the header, with track, basemap and legend visible. Preview: exports/hanna-track-preview.png. The renderer is a verification tool, not a package dependency.
+
+Interactive browser rendering could not be inspected on October 9: the computer-use/Node runtime exited during startup on both attempts. HTML markup, embedded data, offline asset completeness and JavaScript syntax were checked. Earlier dashboard browser checks above apply to the September release. Any later browser verification is recorded in the work log.
+
+Initial pytest errors occurred during temporary-directory setup because Windows denied access to old Temp/pytest and cache directories. Fresh project-local temporary/cache paths resolved those errors. Complete successful logs: data/map-tests-20261009-final.log and data/map-layout-tests-20261009.log. Build and installed-wheel verification details are retained in the work log. GitHub's API confirmed Geauga/cyclone-tracker is public on October 9; publication is verified again after push.
+
+The final build/publication step was interrupted on October 9 when automatic approval review ran out of workspace credits. No action from that rejected call executed. Work resumed with the user's October 10 instruction to continue.

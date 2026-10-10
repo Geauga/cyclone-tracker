@@ -13,6 +13,7 @@ from flask import Flask, abort, jsonify, request, send_file
 from .archive import Archive
 from .exports import export_csv, export_geojson, export_netcdf
 from .provider import COVERAGE, OfficialProvider, dt, utcnow
+from .track_map import export_track_map
 
 LOG = logging.getLogger(__name__)
 
@@ -204,6 +205,9 @@ def create_app(data_dir, provider=None, interval=300, start_worker=True):
             payload, mime, ext = export_netcdf(p), "application/x-netcdf", "nc"
         elif format == "raw":
             payload, mime, ext = monitor.archive.raw(version), "application/zip", "zip"
+        elif format in ("html", "svg"):
+            payload = export_track_map(p, format)
+            mime, ext = ("text/html" if format == "html" else "image/svg+xml"), format
         else:
             abort(404)
         return send_file(io.BytesIO(payload), mimetype=mime, as_attachment=True,
@@ -215,3 +219,4 @@ def create_app(data_dir, provider=None, interval=300, start_worker=True):
 # Upstream purpose: retrieve and persist official advisories. Environment: Python 3.11+, local server.
 # Generated: 2026-09-28 America/New_York. New file; closed/crashed sessions expire within 45 seconds.
 # Change record: new implementation, lines 1-216; finalized 2026-09-29 America/New_York.
+# Updated: 2026-10-09 America/New_York; line 16 map import; lines 208-210 HTML/SVG snapshot downloads.

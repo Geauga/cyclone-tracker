@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cyclone-monitor-local"
-version = "0.1.0"
+version = "0.2.0"
 description = "Local official tropical cyclone advisory monitor and archive"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -17,6 +17,7 @@ test = ["pytest>=8,<10", "build>=1,<2"]
 
 [project.scripts]
 cyclone-monitor = "cyclone_monitor.__main__:main"
+cyclone-track-map = "cyclone_monitor.track_map:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -30,3 +31,4 @@ testpaths = ["tests"]
 # Purpose: package metadata. Upstream: REQUIREMENTS.md (user-approved scope).
 # Environment: Python 3.11+; Windows/Linux/macOS. Generated: 2026-09-28 America/New_York.
 # Change record: new implementation, lines 1-31; finalized 2026-09-29 America/New_York.
+# Updated: 2026-10-09 America/New_York; line 9 version 0.2.0; line 21 track map command.

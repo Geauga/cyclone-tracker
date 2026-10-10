@@ -1,0 +1,22 @@
+<!-- track-map.html -->
+<!-- User request: a portable interactive track map that opens without a running server. -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>@@TITLE@@</title><style>@@LEAFLET_CSS@@</style>
+<style>body{margin:0;font:15px system-ui,sans-serif;color:#173747;background:#f7fafb}header,footer{padding:16px 24px}h1{font-size:24px;margin:0 0 8px}p{margin:7px 0}.details{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}#map{height:64vh;min-height:350px;background:#dcebf0}.controls{display:flex;gap:16px;flex-wrap:wrap;padding:12px 24px}button,select{font:inherit;padding:5px}footer{font-size:12px}.leaflet-popup-content{max-width:300px;max-height:230px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere}</style></head>
+<body><header><h1>@@TITLE@@</h1><p>Archived / imported snapshot · UTC times · Original wind conventions</p>
+<div class="details">@@DETAILS@@</div></header><div id="map" aria-label="Cyclone track map"></div>
+<div class="controls"><label><input id="observed" type="checkbox" checked> Teal observed tracks</label>
+<label><input id="forecast" type="checkbox" checked> Dashed blue forecast tracks</label>
+<label><input id="cone" type="checkbox" checked> Official cone</label>
+<label><input id="wind" type="checkbox" checked> Wind extent</label>
+<label>Wind valid time <select id="wind-time"><option value="">All published times</option></select></label>
+<button id="fit">Fit track</button><button id="world-view">World view</button></div>
+<footer><p>Click a point or overlay for original metadata. Missing fields/overlays are not estimated. Zero radii have no drawn extent.</p>
+<p>Cones are not wind-impact boundaries. HTML uses Web Mercator; source coordinates and definitions are retained. This file contains a saved snapshot and does not refresh.</p>
+<details><summary>Overlay metadata, including zero extents</summary><pre id="overlay-metadata" class="details"></pre></details></footer>
+<script>@@LEAFLET_JS@@</script><script id="track-data" type="application/json">@@DATA@@</script>
+<script id="basemap-data" type="application/json">@@BASEMAP@@</script><script>@@MAP_JS@@</script></body></html>
+<!-- Purpose: standalone snapshot template. Upstream: track_map.py supplies safely embedded data/assets. -->
+<!-- Upstream purpose: generate portable maps. Environment: modern browser; generated 2026-10-09 America/New_York. -->
+<!-- Change record: new file, lines 1-21; finalized 2026-10-10 America/New_York. -->

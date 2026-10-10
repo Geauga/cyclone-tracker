@@ -8,7 +8,7 @@ This workspace contains three independently scoped projects. Each directory has 
 
 3: `cyclone-detect` — Detect and follow tropical cyclones in gridded weather or climate-model output.
 
-Cyclone Monitor now has a working Python package and local browser dashboard, using WMO official-centre track data and matched NOAA GIS overlays. It updates every five minutes (configurable) while open and includes manual refresh, SQLite advisory replay, and CSV/GeoJSON/NetCDF exports. See [launch instructions](cyclone-monitor/README.md) and [coverage limits](cyclone-monitor/SOURCES.md). Cyclone History and Cyclone Detect remain specification projects.
+Cyclone Monitor now has a working Python package and local browser dashboard, using WMO official-centre track data and matched NOAA GIS overlays. It updates every five minutes (configurable) while open and includes manual refresh, SQLite advisory replay, and CSV/GeoJSON/NetCDF exports. Version 0.2.0 adds a standalone track map generator with offline interactive HTML and SVG output from archived advisories or GeoJSON. See [launch and map instructions](cyclone-monitor/README.md) and [coverage limits](cyclone-monitor/SOURCES.md). Cyclone History and Cyclone Detect remain specification projects.
 
 The directories currently share this local Git repository. They are not separate Git repositories or registered Codex projects. Do not introduce nested repositories. Each project should remain independently installable and testable when implemented, without imports from sibling projects.
 

@@ -18,7 +18,7 @@
 <section class="details">
 <div id="empty"><span class="eyebrow">SELECT A STORM</span><h2>From the latest advisory to the full track.</h2><p>Choose a storm to inspect its official forecast, available overlays, and locally archived advisories.</p></div>
 <div id="detail" hidden>
-<div class="detail-heading"><div><span class="eyebrow" id="mode">LATEST RETRIEVED</span><h2 id="storm-title"></h2><p id="issuer"></p></div><div class="exports"><span>Export</span><a id="csv">CSV</a><a id="geojson">GeoJSON</a><a id="nc">NetCDF</a><a id="raw">Originals ZIP</a></div></div>
+<div class="detail-heading"><div><span class="eyebrow" id="mode">LATEST RETRIEVED</span><h2 id="storm-title"></h2><p id="issuer"></p></div><div class="exports"><span>Export</span><a id="csv">CSV</a><a id="geojson">GeoJSON</a><a id="nc">NetCDF</a><a id="raw">Originals ZIP</a><a id="html">Track map</a><a id="svg">SVG map</a></div></div>
 <div class="metrics"><div><span>MAX WIND</span><strong id="wind-value">—</strong><small id="averaging"></small></div><div><span>CENTRAL PRESSURE</span><strong id="pressure-value">—</strong></div><div><span>ANALYSIS · UTC</span><strong class="time" id="analysis"></strong></div><div><span>ISSUED · UTC</span><strong class="time" id="issued"></strong></div></div>
 <div class="replay"><label>Advisory <select id="versions"></select></label><button id="play">▶ Replay</button><label>Compare with <select id="compare"><option value="">None</option></select></label><span id="comparison"></span></div>
 <div id="overlay-status" class="note"></div><p id="wind-text" class="note"></p><p id="provenance" class="note"></p>
@@ -30,3 +30,4 @@
 </body></html>
 <!-- Purpose: browser UI. Upstream: server.py API supplies official and archived data. -->
 <!-- Environment: modern local browser. Generated: 2026-09-28 America/New_York. -->
+<!-- Updated: 2026-10-09 America/New_York; line 21 adds portable HTML/SVG map downloads. -->

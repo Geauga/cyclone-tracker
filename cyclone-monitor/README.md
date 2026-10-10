@@ -32,6 +32,22 @@ The CLI default data directory is %LOCALAPPDATA%\CycloneMonitor on Windows or ~/
 
 The bundled Natural Earth basemap, map controls, archived advisories, and exports work without an external tile service. New advisories require internet access. The low-resolution basemap provides regional/global context.
 
+## Standalone track map generator
+
+Version 0.2.0 adds **cyclone-track-map** and the Python functions **export_track_map** and **write_track_map**. Generate a map from an existing archived advisory or a geographic GeoJSON FeatureCollection. The generator makes no data requests and does not start the dashboard.
+
+From this project directory on Windows, run **.\.venv\Scripts\cyclone-track-map.exe --archive data/advisories.sqlite3 --output exports/track.html**. This selects the newest archived snapshot; it does not establish that the snapshot is current. Add **--version VERSION_ID** to select an exact advisory, or **--storm STORM_KEY** for that storm's newest archived snapshot. The dashboard's GeoJSON export contains these identifiers.
+
+Run **.\.venv\Scripts\cyclone-track-map.exe --geojson exports/track.geojson --output exports/track.svg** to generate an SVG from exported data. After installing the package elsewhere, invoke **cyclone-track-map** directly. The output suffix selects HTML or SVG; **--format html** or **--format svg** overrides it. Use **--title** for a custom map title.
+
+The HTML is a single file with bundled Leaflet, the Natural Earth basemap, track data and source metadata. Open it directly in a browser, share it, or attach it to an email. No tile server or running Python server is needed. Observed tracks are teal, forecast tracks are dashed blue, and official cone/wind layers have switches and a wind valid-time selector. Click features for timestamps, intensity, units and provenance. Date-line tracks use a compact longitude view. The file is a saved snapshot and never refreshes automatically.
+
+SVG is a vector world map with an equirectangular projection, preserving date-line splits. It includes embedded GeoJSON metadata and feature tooltips. HTML uses Web Mercator. These display projections do not transform source intensity conventions or assign new meaning to cone/wind geometry. Missing overlays are not estimated and explicit zero extents remain metadata without drawn polygons.
+
+The dashboard offers **Track map** and **SVG map** downloads for the selected advisory, including archive replay. An archived download always uses the selected version's tracks and overlays. Generated files remain under ignored exports/ by default.
+
+The complete example [examples/generate_track_map.py](examples/generate_track_map.py) demonstrates Python API usage.
+
 ## Data and scientific meaning
 
 CSV contains one row per observed or forecast track point, with units in column names and attribution/time fields. Text that could become a spreadsheet formula is escaped. Missing numbers remain empty; zero remains zero.
@@ -72,4 +88,4 @@ Build distributions with **.\.venv\Scripts\python.exe -m build**. These commands
 
 ## Execution location
 
-This project runs locally. No Colab runtime, Google Drive API, GitHub remote, or hosted website is involved. The checkout is under OneDrive; its synchronization is outside the package's control.
+This project runs locally. Source is published in the public [Geauga/cyclone-tracker](https://github.com/Geauga/cyclone-tracker) repository. No Colab runtime, Google Drive API, or hosted application is involved. The checkout is under OneDrive; its synchronization is outside the package's control.
