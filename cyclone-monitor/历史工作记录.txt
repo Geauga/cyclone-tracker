@@ -158,3 +158,11 @@ GitHub Timeline: 已 push — e4fb1e9 is published and verified as Geauga; compl
 测试或验证结果: Verified resolved absolute deletion targets stayed within the project and had no link targets. All 307 inspected files were removed. CLI help succeeded; archive contained seven accessible latest storm snapshots; HTML and SVG API downloads returned HTTP 200 and SVG parsed successfully after cleanup. Current wheel/source artifacts and Git-history backup remain present. No full test rerun was needed because runtime source was unchanged. One old cyclone-monitor/.pytest_cache remains: Windows denied traversal, removal and ownership recovery. Recovery attempt failed before permission changes occurred.
 执行位置: Local Windows filesystem and Git working tree. Deleted only local ignored artifacts; no repository application code changed. Ownership recovery was scoped to the disposable pytest cache and did not succeed.
 GitHub Timeline: 未 commit — this cleanup record will be committed locally. Public source is unchanged at 95a2dc681dc2c31348f5999148a47bc73a0c0e20; no push was requested for this local cleanup.
+
+时间: 2026-10-11 19:11:45 -04:00 (America/New_York)
+用户 Prompt 摘要: push
+具体动作: Pushed cleanup record c0bc3f976b550fee91a222598191194d1c305fc5 to Geauga/cyclone-tracker master. Appended this publication record and committing/pushing it as Geauga.
+修改文件: 历史工作记录.txt; cyclone-monitor/历史工作记录.txt.
+测试或验证结果: Initial push succeeded and local/remote commit hashes matched. Documentation-only publication; previous cleanup smoke checks remain applicable. Final branch equality checked after publication-record push.
+执行位置: Local Git repository and GitHub remote. Local ignored-artifact deletions were never tracked by Git; repository runtime source is unchanged.
+GitHub Timeline: 已 push — cleanup record c0bc3f9 published and verified. Publication record follows in a normal fast-forward push.
